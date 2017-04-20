@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!-- Link to CSS Files -->
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body>
+<h1 class="text-center"> ADD A LINK </h1>
+	<form>
+	  <div class="row">
+	    <div class="medium-6 columns">
+	      <label>Link:
+	        <input type="text" placeholder="Paste the link here">
+	      </label>
+	    </div>
+	    <div class="medium-6 columns">
+	      <label>Title:
+	        <input type="text" placeholder="Pick a title for the link (optional)">
+	      </label>
+	    </div>
+	  </div>
+	  <div class="row">
+	  	<div class="medium-6 columns">
+	  		<label>Bucket:
+				  <select>
+				    <option value="$">Bucket 1</option>
+				    <option value="$">Bucket 2</option>
+				    <option value="$">Bucket 3</option>
+				    <option value="$">Bucket 4</option>
+				  </select>
+	  		</label>
+	  	</div>
+	  	<fieldset class="medium-6 columns">
+		    <legend>Choose Your Rating</legend>
+		    <input type="radio" name="rating" value="1" id="rating1" required><label for="rating1">1</label>
+		    <input type="radio" name="rating" value="2" id="rating2"><label for="rating2">2</label>
+		    <input type="radio" name="rating" value="3" id="rating3"><label for="rating3">3</label>
+		  </fieldset>
+	  </div>
+	</form>
+
+	<!-- Link to JS Files -->
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/what-input.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

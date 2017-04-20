@@ -1,1 +1,2 @@
+/*Run foundation*/
 $(document).foundation()

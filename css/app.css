@@ -1,0 +1,19 @@
+.card{
+	border: solid 2px black;
+	background: #00688B;
+	width:300px;
+	height: 300px;
+	text-align: center;
+}
+
+.card h2 {
+	color: white;
+}
+
+.card:hover{
+	background: #AA688B;
+}
+
+img{
+	width:100px;
+}

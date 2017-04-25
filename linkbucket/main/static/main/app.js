@@ -4,7 +4,7 @@ myapp.component('main', {
 	templateUrl: "/static/main/index.html",
 });
 
-myapp.component('allbuckets', {
+myapp.component('allBuckets', {
 	templateUrl: "/static/main/buckets.html",
 });
 
@@ -16,7 +16,7 @@ myapp.component('bucket', {
 	templateUrl: "/static/main/bucket.html",
 });
 
-myapp.component('link', {
+myapp.component('addLink', {
 	templateUrl: "/static/main/addlink.html",
 });
 
@@ -35,7 +35,7 @@ myapp.config(function($routeProvider) {
 			template: '<bucket></bucket>'
 		}).
 		when('/add', {
-			template: '<link></link>'
+			template: '<add-link></add-link>'
 		}).
 		otherwise('/');
 });

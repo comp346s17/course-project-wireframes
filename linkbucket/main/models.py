@@ -7,14 +7,26 @@ from django.db import models
 #Model for a single bucket
 class Bucket(models.Model):
 	title = models.TextField()
+	description = models.TextField()
 	creator = models.ForeignKey('auth.user')
-	links = models.OneToManyField('Link')
 
+	def to_json(self):
+		return {
+			'title': self.title,
+			'desc': self.description,
+			'creator': self.creator,
+		}
 
 #Model for single link
 class Link(models.Model):
 	title = models.TextField()
-	bucket = models.OneToManyField('Bucket')
-	link_ref = models.TextField()
+	buckets = models.ManyToManyField('Bucket')
+	link_url = models.TextField()
 
+	def to_json(self):
+		return {
+			'title':self.title,
+			'buckets': self.buckets,
+			'url': self.link_url,
+		}
 

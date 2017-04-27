@@ -1,28 +1,19 @@
-<h1 class="text-center"> MY ACCOUNT </h1>
-<form>
+<div style="margin-top: 3.5%;">
+  <h1 class="text-center"> MY ACCOUNT </h1>
   <div class="row">
-    <div class="medium-6 columns">
-      <label>First Name:
-        <input type="text" placeholder="Enter First Name">
-      </label>
-    </div>
-    <div class="medium-6 columns">
-      <label>Last Name:
-        <input type="text" placeholder="Enter Last Name">
-      </label>
+    <div class="small-8 small-centered columns">
+      <form>
+        <label>First Name:
+          <input type="text" placeholder="Enter First Name" required>
+        </label>
+        <label>Last Name:
+          <input type="text" placeholder="Enter Last Name" required>
+        </label>
+        <label>Email:
+          <input type="email" placeholder="example@example.com" required>
+        </label>
+        <a role="button" aria-label="submit form" href="#" class="button">SAVE</a>
+      </form>
     </div>
   </div>
-  <div class="row">
-  	<div class="medium-6 columns">
-  		<label>Bio:
-  			<textarea placeholder="Enter a short bio..."></textarea>
-  		</label>
-  	</div>
-  	<div class="medium-6 columns">
-      <label>Email:
-        <input type="email" placeholder="example@abc.com">
-      </label>
-    </div>
-  </div>
-  	<a role="button" aria-label="submit form" href="#" class="button">SAVE</a>
-</form>
+</div>

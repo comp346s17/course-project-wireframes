@@ -1,35 +1,24 @@
-<h1 class="text-center"> ADD A LINK </h1>
-<form>
+<div style="margin-top: 3%;">
+  <h1 class="text-center"> ADD LINK </h1>
   <div class="row">
-    <div class="medium-6 columns">
-      <label>Link:
-        <input type="text" placeholder="Paste the link here">
-      </label>
-    </div>
-    <div class="medium-6 columns">
-      <label>Title:
-        <input type="text" placeholder="Pick a title for the link (optional)">
-      </label>
+    <div class="small-8 small-centered columns">
+      <form>
+        <label>Link:
+          <input type="text" placeholder="Paste link here..." required>
+        </label>
+        <label>Title:
+          <input type="text" placeholder="Pick a title for your link..." required>
+        </label>
+        <label>Bucket:
+          <select>
+            <option value="$">Bucket 1</option>
+            <option value="$">Bucket 2</option>
+            <option value="$">Bucket 3</option>
+            <option value="$">Bucket 4</option>
+          </select>
+        </label>
+        <a role="button" aria-label="submit form" href="#" class="button">ADD TO BUCKET</a>
+      </form>
     </div>
   </div>
-  <div class="row">
-  	<div class="medium-6 columns">
-  		<label>Bucket:
-			  <select>
-			    <option value="$">Bucket 1</option>
-			    <option value="$">Bucket 2</option>
-			    <option value="$">Bucket 3</option>
-			    <option value="$">Bucket 4</option>
-			  </select>
-  		</label>
-  	</div>
-  	<fieldset class="medium-6 columns">
-	    <legend>Choose Your Rating</legend>
-	    <input type="radio" name="rating" value="1" id="rating1" required><label for="rating1">1</label>
-	    <input type="radio" name="rating" value="2" id="rating2"><label for="rating2">2</label>
-	    <input type="radio" name="rating" value="3" id="rating3"><label for="rating3">3</label>
-	  </fieldset>
-  </div>
-  	<a role="button" aria-label="submit form" href="#" class="button">ADD TO BUCKET</a>
-</form>
-
+</div>

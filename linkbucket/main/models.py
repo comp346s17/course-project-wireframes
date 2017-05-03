@@ -38,7 +38,7 @@ class User(models.Model):
     name = models.CharField(max_length=100)
 
 
-
+#Models that are required for creating accounts
 class Account(AbstractBaseUser):
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=40, unique=True)

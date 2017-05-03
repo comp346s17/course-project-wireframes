@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from tastypie.api import Api
+from .apps.your_app.api import JobResource
 
 from main import views
 
@@ -22,3 +24,11 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index, name='index'),
 ]
+
+ v1_api = Api(api_name='v1')
+ v1_api.register(UserResource())
+ 
+ urlpatterns = patterns('',
+ 
+      (r'^api/', include(v1_api.urls)),
+ )

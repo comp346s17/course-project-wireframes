@@ -1,34 +1,27 @@
-"""linkbucket URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/1.10/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  url(r'^$', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  url(r'^$', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.conf.urls import url, include
-    2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
-"""
-from django.conf.urls import url
+from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from tastypie.api import Api
-from .apps.your_app.api import JobResource
 
-from main import views
 
-urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^$', views.index, name='index'),
-]
+admin.autodiscover()
 
- v1_api = Api(api_name='v1')
- v1_api.register(UserResource())
- 
- urlpatterns = patterns('',
- 
-      (r'^api/', include(v1_api.urls)),
- )
+readme_patterns = patterns('readme.views',
+    url(r'^$', 'index', name='index'),
+    url(r'^tags/(?P<tags>.*)$', 'tags', name='tags'),
+    url(r'^add/$', 'add', name='item_add'),
+    url(r'^update/(?P<pk>\d+)/$', 'update', name='item_update'),
+    url(r'^view/(?P<pk>\d+)/$', 'view', name='item_view'),
+    url(r'^search/', 'search', name='haystack_search'),
+    url(r'^invite/$', 'invite', name='invite'),
+    url(r'^profile/$', 'profile', name='profile'),
+    url(r'^test/(?P<test_name>\w+)$', 'test', name='test_view'),
+)
+
+
+urlpatterns = patterns('',
+    url(r'^accounts/', include('readme.account_urls')),
+    url(r'^api/', include('readme.api_urls')),
+    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+
+    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+    url(r'^admin/', include(admin.site.urls)),
+) + readme_patterns
